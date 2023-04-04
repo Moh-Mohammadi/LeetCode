@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int partitionString(string s) {
+        bool alphabet[26] = {false};
+        int counter = 0;
+        for(int i = 0; i < s.length(); i++){
+            int index = s[i] - 'a';
+            if(alphabet[index]){
+                counter++;
+                memset(alphabet, 0, 26);
+                alphabet[index] = true;
+            }else{
+                alphabet[index] = true;
+            }
+                
+        }
+        return counter+1;
+    }
+};
